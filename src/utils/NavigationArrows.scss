@@ -1,0 +1,18 @@
+.NavigationArrows {
+  width: 230px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #45CB85;
+    background: #FFF;
+  }
+  .activeDot {
+    background: #45CB85;
+  }
+}
