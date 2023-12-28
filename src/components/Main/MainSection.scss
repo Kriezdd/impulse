@@ -1,0 +1,75 @@
+.MainSection {
+  // todo: delete this when u make wrapper
+  width: 100%;
+  margin: 200px auto 80px auto;
+
+  .Main-grid {
+    max-width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-rows: minmax(auto, 300px);
+    grid-auto-columns: minmax(300px, auto);
+
+    .Main-info {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: end;
+
+      h1 {
+        margin: 2% 0;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      span {
+        font-weight: 700;
+        color: #724CF9;
+      }
+
+      p {
+        font-weight: 500;
+      }
+    }
+
+    .moreInfo {
+      margin: 4% 0;
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .Main-images {
+      grid-column: 2;
+
+      width: 600px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      img {
+        height: 300px;
+        width: 300px;
+      }
+
+      img:first-child {
+        height: 150px;
+        width: 150px;
+        align-self: center;
+        justify-self: center;
+      }
+
+      img:nth-child(2) {
+        border-radius: 0 150px 0 0;
+      }
+
+      img:nth-child(3) {
+        border-radius: 0 0 0 150px;
+      }
+
+      img:nth-child(4) {
+        border-radius: 0 0 150px 0;
+      }
+    }
+  }
+}

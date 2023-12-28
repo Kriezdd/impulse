@@ -21,7 +21,10 @@ p, li {
   font-weight: 400;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 180px 0;
-  background-image: url("./images/bg.png");
+  //background-image: url("./images/bg.png");
 }

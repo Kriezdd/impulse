@@ -1,13 +1,15 @@
 import React from "react";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import Projects from "./components/Projects/Projects";
+import './App.scss';
+import {Outlet} from "react-router";
+
+
 
 function App() {
     return (
         <div className="App">
+            <Outlet/>
             <Header/>
-            <Projects/>
         </div>
     );
 }

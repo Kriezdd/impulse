@@ -1,21 +1,22 @@
 import React from 'react';
 import logo from '../../images/logo.png';
 import './Header.scss';
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <header className="header">
             <nav>
-                <a href="/" className="logoWithText">
-                    <img src={logo}/>
+                <Link to={"/"} className="logoWithText">
+                    <img src={logo} alt="logo" />
                     <p>Импульс</p>
-                </a>
+                </Link>
                 <ul>
                     <li>
-                        <a href="/projects">Проекты</a>
+                        <Link to={"/impulse"}>Проекты</Link>
                     </li>
                     <li>
-                        <a href="/team">Команда</a>
+                        <Link to={"#Team"}>Команда</Link>
                     </li>
                     <li>
                         <a href="/gallery">Галерея</a>
