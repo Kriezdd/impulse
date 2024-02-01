@@ -1,0 +1,17 @@
+.Team{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .Team-Spoiler {
+    color: #724CF9;
+  }
+  .Team-Title {
+    margin-bottom: 50px;
+  }
+  .Team-Grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 160px;
+    row-gap: 50px;
+  }
+}

@@ -1,0 +1,75 @@
+.InfoCard {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+
+  .Smile__green, .Smile__yellow {
+    position: absolute;
+    z-index: 4;
+    height: 140px;
+  }
+  .Smile__green {
+    top: 77%;
+    left: 0;
+  }
+  .Smile__yellow {
+    top: 0;
+    right: 0;
+  }
+
+  .InfoCard-Picture {
+    position: relative;
+    object-fit: cover;
+    max-height: 100%;
+    max-width: 700px;
+    border-radius: 100px 0 0 200px;
+    border: 1px solid #0007;
+  }
+
+  .InfoCard-Container {
+    position: relative;
+    max-width: 500px;
+    max-height: 600px;
+    border-radius: 0 50px 50px 0;
+    background: #fff;
+    border: 1px solid #0007;
+
+    .InfoCard-TextArea {
+      max-width: 100%;
+      max-height: 100%;
+      padding: 30px 70px;
+
+      .TextArea-Title {
+        font-size: 74px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #724CF9;
+        margin: 0 0 20px 0;
+      }
+
+      .TextArea-Description {
+        font-weight: 600;
+        padding-bottom: 40px;
+      }
+
+      .TextArea-Question {
+        padding: 10px 0;
+        font-weight: 600;
+      }
+
+      .InfoCard-List {
+        padding-bottom: 30px;
+        list-style-position: inside;
+      }
+
+      .NavigationArrows {
+        margin: 20px auto;
+      }
+    }
+  }
+
+}

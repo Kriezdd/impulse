@@ -5,27 +5,27 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import './index.scss';
 import MainPage from "./routes/MainPage";
 import Impulse from "./routes/Impulse";
 import Leagues from "./routes/Leagues";
+import './index.scss';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: <App/>,
         children: [
             {
                 path: "/",
-                element: <MainPage />,
+                element: <MainPage/>,
             },
             {
                 path: "/impulse",
-                element: <Impulse />,
+                element: <Impulse/>,
             },
             {
                 path: "/leagues",
-                element: <Leagues />,
+                element: <Leagues/>,
             }
         ]
     },
@@ -34,6 +34,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
     </React.StrictMode>
 );

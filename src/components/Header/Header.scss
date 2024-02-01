@@ -1,54 +1,28 @@
-.header {
+@import "../../scss_utils/vars";
+
+.Header {
   position: fixed;
   z-index: 99;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 65px;
-
-  background: #FFF;
-  box-shadow: 0 4px 4px 0 rgba(114, 76, 249, 0.15);
+  background: $main-light;
+  box-shadow: 0 4px 4px 0 rgba(114, 76, 249, 0.1);
   display: flex;
   align-items: center;
-  justify-content: center;
 
   nav {
-    width: 1320px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-
-    a {
-      color: #242424;
-      text-decoration: none;
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    .logoWithText {
-      width: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-right: 10px;
-      img {
-        height: 40px;
-        width: 40px;
-      }
-
-      p {
-        font-family: TT_Rounds_Neue, serif;
-        font-size: 36px;
-      }
-    }
-
+    gap: 15px;
 
     ul {
-      width: 700px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       list-style: none;
+      gap: 100px;
     }
   }
 }

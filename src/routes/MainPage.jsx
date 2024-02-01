@@ -1,14 +1,15 @@
 import React from 'react';
-import MainSection from "../components/Main/MainSection";
-import Projects from "../components/Projects/Projects";
-import Team from "../components/Team/Team";
+import MainSection from "../components/MainPage/Main/MainSection";
+import Projects from "../components/MainPage/Projects/Projects";
+import Team from "../components/MainPage/Team/Team";
 
 const MainPage = () => {
+
     return (
         <div>
-            <MainSection/>
-            <Projects/>
-            <Team/>
+            <MainSection />
+            <Projects />
+            <Team />
         </div>
     );
 };

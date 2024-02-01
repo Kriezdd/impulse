@@ -1,0 +1,33 @@
+.InfoParagraph {
+  margin: 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TextArea {
+  max-width: 650px;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.ImageArea {
+  position: relative;
+  display: flex;
+  gap: 100px;
+  justify-content: flex-end;
+
+  .ImageArea-Img {
+    margin: 0 75px;
+    width: 500px;
+    height: 500px;
+  }
+  .ImageArea-Smile {
+    position: absolute;
+    width: 140px;
+  }
+}
+
+.right {
+  flex-direction: row-reverse;
+}

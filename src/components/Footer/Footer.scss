@@ -1,0 +1,52 @@
+.Footer {
+  color: #dddddd;
+  width: 100%;
+  height: 350px;
+  background: #242424;
+  display: flex;
+  align-items: center;
+}
+
+.Footer-Content {
+  display: flex;
+  justify-content: space-between;
+
+  .Content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .Contacts {
+    .Contacts-Phone {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+  }
+  .Socials {
+    .Socials-Links {
+      img {
+        width: 60px;
+      }
+    }
+  }
+}
+
+.Footer-LogoContainer {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: 600;
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+
+  h3 {
+    font-family: TT_Rounds_Neue, serif;
+  }
+}

@@ -1,0 +1,32 @@
+.NextProject {
+  height: 480px;
+  display: flex;
+
+  .NextProject-Img {
+    margin-right: 45px;
+  }
+  .NextProject-Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+      color: #724CF9;
+      font-weight: 800;
+    }
+
+    .OrgInfo {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    .Info-OrgInfo {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
