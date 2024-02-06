@@ -11,10 +11,10 @@
     margin-bottom: 50px;
   }
   .Team-Grid {
-    width: 100%;
     display: flex;
+    justify-content: space-between;
+    gap: 1rem;
     flex-wrap: wrap;
-    gap: 15px;
     //grid-template-columns: repeat(4, 1fr);
   }
 }
