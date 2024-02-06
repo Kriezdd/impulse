@@ -1,24 +1,96 @@
-.MemberCard {
-  max-width: 200px;
-  max-height: 340px;
-  img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 50px;
-    border: 1px solid #000;
-  }
-  .member-info {
+@import "../../../scss_utils/vars";
+
+.Member {
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px $border-color;
+
+  .Info-Container {
+    height: 100%;
     display: flex;
     flex-direction: column;
+
+    .Member-MainInfo {
+      color: $main-light;
+      margin-bottom: 20px;
+
+      p {
+        margin-top: 5px;
+        font-size: $small-font-size;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.Card-Default {
+  position: relative;
+  width: 250px;
+  height: 320px;
+
+
+  .MemberBackground {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .Info-Container {
     align-items: center;
     text-align: center;
-    strong {
-      font-size: 18px;
-      margin: 10px 0 5px 0;
+    justify-content: flex-end;
+    border-radius: 10px;
+    background: linear-gradient(rgba(29, 29, 29, 0) 60%, rgba(29, 29, 29, 100) 100%);
+
+    &:hover {
+      background: linear-gradient(rgba(114, 76, 249, 0) 60%, rgba(114, 76, 249, 100) 100%);
     }
-    p {
-      font-size: 18px;
+  }
+}
+
+.Card-Detailed {
+  width: 650px;
+  height: 320px;
+  display: flex;
+  background: #F2F0FA; // todo: решить: точно ли этот цвет?
+
+  p, strong {
+    color: $main-dark;
+  }
+
+  .MemberBackground {
+    width: 250px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .Info-Container {
+    width: calc(100% - 290px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .Member-DetailedInfo {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        font-size: $small-font-size;
+        font-weight: 500;
+      }
+
+      .DetailedInfo-Quote {
+        border-left: #724CF9 2px solid;
+        padding-left: 10px;
+      }
     }
   }
 }

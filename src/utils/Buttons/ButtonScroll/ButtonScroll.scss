@@ -9,5 +9,9 @@
   border-radius: 50px;
   border: 2px solid $accent-color;
   color: $accent-color;
-  background: $main-light;
+
+  transition: all 100ms ease-in-out;
+  &:hover {
+    background: #724CF920;
+  }
 }

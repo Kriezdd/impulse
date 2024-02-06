@@ -1,14 +1,27 @@
-import React, {useState} from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import React from 'react';
+import {Link as ScrollLink} from 'react-scroll';
 import InfoCard from "./InfoCard";
 import './Projects.scss';
+import pic1 from "../../../images/projects/impulse.jpg";
+import pic2 from "../../../images/projects/league.jpg";
 
 const Projects = () => {
-    const [whichProject, setWhichProject] = useState(0)
-    function changeProject() {
-        (whichProject === 0) ? (setWhichProject(1)) : (setWhichProject(0));
-        return whichProject;
-    }
+    const projectsArray = [
+        {
+            title: 'Импульс',
+            address: '/impulse',
+            subTitle: 'Пятидневный проект дневного пребывания для детей школьного возраста',
+            list: ['активный отдых', 'развлечение', 'обучение'],
+            picture: pic1,
+        },
+        {
+            title: 'Лиги',
+            address: '/leagues',
+            subTitle: 'Еженедельные занятия, направленные на развитие личностных навыков SOFT-skills',
+            list: ['комфортное пространство', 'единое сообщество', 'индивидуальный подход'],
+            picture: pic2,
+        }
+    ]
 
     return (
         <div className="Projects wrapper gaps" id="projects">
@@ -19,11 +32,15 @@ const Projects = () => {
                 offset={-100}
                 className="Projects-Spoiler"
             >
-                где творятся чудеса <br/>
+                <p className="Spoiler-P">где творятся чудеса</p>
                 <i className="Arrow-Down"></i>
             </ScrollLink>
-            <h1 className="Projects-Title">проекты нашей команды</h1>
-            <InfoCard changeProject={changeProject} whichProject={whichProject}/>
+            <h3 className="Projects-Title">наши проекты</h3>
+            <div className="Projects-Grid">
+                {projectsArray.map((project, id) => (
+                    <InfoCard project={project} key={id}/>
+                ))}
+            </div>
         </div>
     );
 };

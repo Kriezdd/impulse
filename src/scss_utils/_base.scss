@@ -38,11 +38,7 @@ p, button, ul {
 strong {
   font-weight: 700;
 }
-button, a {
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-}
+
 
 // на всякий
 *, h1, h2, h3, p, button, li, a, strong, span {
@@ -82,7 +78,14 @@ button, a {
 }
 
 .gaps {
-  margin: 140px auto;
+  margin: 150px auto;
+}
+
+button, a {
+  font-family: $main-font;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 body {
