@@ -1,32 +1,11 @@
 @import "../../../scss_utils/vars";
 
-.Member {
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px $border-color;
-
-  .Info-Container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .Member-MainInfo {
-      color: $main-light;
-      margin-bottom: 20px;
-
-      p {
-        margin-top: 5px;
-        font-size: $small-font-size;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-.Card-Default {
+.MemberCard {
   position: relative;
   width: 250px;
   height: 320px;
-
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px $border-color;
 
   .MemberBackground {
     position: absolute;
@@ -38,59 +17,51 @@
     background-position: center;
   }
 
-  .Info-Container {
-    align-items: center;
-    text-align: center;
-    justify-content: flex-end;
-    border-radius: 10px;
-    background: linear-gradient(rgba(29, 29, 29, 0) 60%, rgba(29, 29, 29, 100) 100%);
-
-    &:hover {
-      background: linear-gradient(rgba(114, 76, 249, 0) 60%, rgba(114, 76, 249, 100) 100%);
-    }
-  }
-}
-
-.Card-Detailed {
-  width: 650px;
-  height: 320px;
-  display: flex;
-  background: #F2F0FA; // todo: решить: точно ли этот цвет?
-
-  p, strong {
-    color: $main-dark;
-  }
-
-  .MemberBackground {
-    width: 250px;
+  .InfoContainer {
+    position: relative;
     height: 100%;
-    border-radius: 10px 0 0 10px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .Info-Container {
-    width: calc(100% - 290px);
-    height: calc(100% - 40px);
-    margin: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
 
-    .Member-DetailedInfo {
+    .Member-MainInfo {
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-end;
+      color: $main-light;
+      margin-bottom: 20px;
 
-      p {
+      .memberPos {
+        margin-top: 5px;
         font-size: $small-font-size;
-        font-weight: 500;
+        font-weight: 600;
       }
+    }
 
-      .DetailedInfo-Quote {
-        border-left: #724CF9 2px solid;
-        padding-left: 10px;
-      }
+    background: linear-gradient(rgba(29, 29, 29, 0) 60%, rgba(29, 29, 29, 100) 100%);
+
+    transition: all 600ms ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      top:  0;
+      left:  0;
+      width:  100%;
+      height:  100%;
+      border-radius: 10px;
+      background: linear-gradient(rgba(114, 76, 249, 0) 60%, rgba(114, 76, 249, 100) 100%);
+      opacity:  0;
+      transition: opacity  0.4s ease-in-out;
+      z-index:  1;
+    }
+    &:hover::after {
+      opacity:  1;
+    }
+    &:hover {
+      opacity: 0;
     }
   }
 }

@@ -1,44 +1,56 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import './MemberCard.scss';
+import MemberModal from "./MemberModal/MemberModal";
 
 const MemberCard = ({member}) => {
     const [isDetailed, setIsDetailed] = useState(false);
 
-    const handleClick = () => {
-        setIsDetailed(!isDetailed);
-    }
+    const timeoutIdRef = useRef();
+
+    const handleMouseEnter = () => {
+        // Clear the timeout if the mouse re-enters before the timeout completes
+        if (timeoutIdRef.current) {
+            clearTimeout(timeoutIdRef.current);
+            timeoutIdRef.current = null;
+        }
+        setTimeout(() => setIsDetailed(true), 50)
+
+    };
+
+    const handleMouseLeave = () => {
+        // Set a timeout to perform an action after the mouse leaves the element
+        timeoutIdRef.current = setTimeout(() => {
+            setIsDetailed(false);
+        },  500);
+    };
+
 
     let memberClass;
     isDetailed ? memberClass = 'Detailed' : memberClass = 'Default';
 
     return (
-        <div onClick={isDetailed ? null : handleClick} className={`Member Card-${memberClass}`}>
+        <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={`MemberCard ${memberClass}`}
+        >
             <div
-                onClick={isDetailed ? handleClick : null}
                 style={{
                     backgroundImage: `url(${member.pic})`
                 }}
                 className={`MemberBackground`}
             />
-            <div className="Info-Container">
+            <div className="InfoContainer">
                 <div className="Member-MainInfo">
                     <strong>{member.name}</strong>
-                    <p>{member.position}</p>
+                    <p className="memberPos">{member.position}</p>
                 </div>
-                {
-                    isDetailed ?
-                        <div className="Member-DetailedInfo">
-                            <div className="DetailedInfo-ExperienceFact">
-                                <p>Опыт работы: {member.moreInfo.experience}</p>
-                                <p>{member.moreInfo.fact}</p>
-                            </div>
-                            <div className="DetailedInfo-Quote">
-                                <p>{member.moreInfo.quote}</p>
-                            </div>
-                        </div>
-                        : null
-                }
             </div>
+            {
+                isDetailed ?
+                    <MemberModal member={member}/>
+                    : null
+            }
         </div>
     );
 };

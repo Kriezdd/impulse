@@ -1,0 +1,45 @@
+@import '../../../../scss_utils/vars';
+
+.MemberModal {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  transform: translateX(+61%);
+  height: 320px;
+  width: 400px;
+  background: #F2F0FA;
+  border-radius: 0 10px 10px 0;
+  transition: opacity  0.3s ease, transform  0.3s ease;
+
+  &::before {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  &::after {
+    opacity: 1;
+  }
+
+  .memberPos {
+    font-size: $small-font-size;
+    font-weight: 600;
+  }
+
+  .small-text {
+    font-size: $small-font-size;
+    font-weight: 500;
+  }
+
+  .DetailedInfo-Quote {
+    border-left: #724CF9 2px solid;
+    padding-left: 10px;
+  }
+
+  .MemberInfo {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+  }
+}
