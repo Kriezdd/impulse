@@ -40,7 +40,7 @@ const MemberCard = ({member}) => {
                 }}
                 className={`MemberBackground`}
             />
-            <div className="InfoContainer">
+            <div className={`InfoContainer ${isDetailed ? 'InfoContainer--disabled' : ''}`}>
                 <div className="Member-MainInfo">
                     <strong>{member.name}</strong>
                     <p className="memberPos">{member.position}</p>

@@ -1,15 +1,43 @@
 @import '../../../../scss_utils/vars';
 
+.additional-bg {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 320px;
+  border-radius: 10px;
+  background: $accent-color;
+  opacity: 0.8;
+  transition: opacity  0.3s ease, transform  0.3s ease;
+
+  &:hover::before {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 0.8;
+  }
+}
+
 .MemberModal {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.info-container {
   position: absolute;
   z-index: 5;
   top: 0;
   left: 0;
-  transform: translateX(+61%);
-  height: 320px;
-  width: 400px;
-  background: #F2F0FA;
-  border-radius: 0 10px 10px 0;
+  transform: translateX(+3%) translateY(-5%);
+  height: 330px;
+  width: 260px;
+  background: rgba(29,  29,  29,  0.6);
+  border-radius: 10px;
   transition: opacity  0.3s ease, transform  0.3s ease;
 
   &::before {
@@ -32,14 +60,15 @@
 
   .DetailedInfo-Quote {
     border-left: #724CF9 2px solid;
-    padding-left: 10px;
+    padding-left: 7px;
   }
 
   .MemberInfo {
-    height: 280px;
+    color: $main-light;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 20px;
+    margin: 15px;
   }
 }
