@@ -5,34 +5,24 @@ import MemberModal from "./MemberModal/MemberModal";
 const MemberCard = ({member}) => {
     const [isDetailed, setIsDetailed] = useState(false);
 
-    const timeoutIdRef = useRef();
-
     const handleMouseEnter = () => {
-        // Clear the timeout if the mouse re-enters before the timeout completes
-        if (timeoutIdRef.current) {
-            clearTimeout(timeoutIdRef.current);
-            timeoutIdRef.current = null;
-        }
-        setTimeout(() => setIsDetailed(true), 50)
-
+        setIsDetailed(prevState => !prevState)
     };
 
     const handleMouseLeave = () => {
-        // Set a timeout to perform an action after the mouse leaves the element
-        timeoutIdRef.current = setTimeout(() => {
-            setIsDetailed(false);
-        },  500);
+        setIsDetailed(false)
     };
 
-
-    let memberClass;
-    isDetailed ? memberClass = 'Detailed' : memberClass = 'Default';
+    function handleClick() {
+        setIsDetailed(prevState => !prevState)
+    }
 
     return (
         <div
+            onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`MemberCard ${memberClass}`}
+            className='MemberCard'
         >
             <div
                 style={{
@@ -40,17 +30,16 @@ const MemberCard = ({member}) => {
                 }}
                 className={`MemberBackground`}
             />
-            <div className={`InfoContainer ${isDetailed ? 'InfoContainer--disabled' : ''}`}>
+
+            <MemberModal member={member} isDetailed={isDetailed} />
+
+            <div className={`InfoContainer ${isDetailed ? `` : `active`}`}>
                 <div className="Member-MainInfo">
                     <strong>{member.name}</strong>
                     <p className="memberPos">{member.position}</p>
                 </div>
             </div>
-            {
-                isDetailed ?
-                    <MemberModal member={member}/>
-                    : null
-            }
+
         </div>
     );
 };
